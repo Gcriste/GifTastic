@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+<!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<!-- css link-->
     <link rel="stylesheet" href = "assets/css/style.css">
+ <!-- boostrap-->  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Gif Tastic</title>
@@ -17,45 +19,56 @@
 
 <body>
 
+    <!-- header-->
     <header >
         <div class = "instructions">
             Click on a button to see the images!
         </div>
     </header>
 
+
+    <!-- open up grid-->
     <div class = "container">
+        <!-- row1-->
         <div class = "row">
             <div class = "col-md-9">
+                <!--This is where buttons will be displayed-->
                 <div id = "buttonsection"></div>
             </div>
             <div class = "col-md-3">
+                <!--form for putting in new emotion to be displayed-->
                 <form id = "band-form">
                     <label class = "add-band-text" for = "band-input">Add another emotion! </label>
                     <input type ="text" id ="band-input"><br>
                     <button id = "add-band" type = "submit" value= "add a new band">Click Here!</button>
                 </form>
             </div>
-            
+            <!--row1 closed-->
         </div>
+
+        <!-- row 2-->
         <div class = "row">
             <div class = "col-md-12" class = "col-sm-4">
                 <div class = "gifdirections"></div>
+                  <!-- This is where gifs will be displayed-->
                 <div class = "gifsection">
                     <div  id ="images"></div>
                 </div>
-            </div>
-
+            </div>  
+        <!-- row2 closed-->
         </div>
+
+    <!-- grid closed-->
     </div>
         
    
-
+<!-- footer-->
 <div class = "footer">
         &copy; 2019
 </div>
 
 
-    
+    <!--jquery, boostrap and javascript links-->
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -63,4 +76,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <script src = "assets/javascript/app.js"></script>
 </body>
+
+
 </html>

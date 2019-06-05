@@ -8,7 +8,7 @@ body{
 
 
 .container{
-    background-color:#f4bf42;
+    background-color:#ffc851;
 }
 
 .instructions{
@@ -47,14 +47,14 @@ body{
 }
 
 .gif:hover{
-    background-color:green;
+    background-color:#2a648c;
 }
 button:hover{
-background-color:green;
+background-color:#2a648c;
 
 }
 
-#add-band:hover{background-color:green;
+#add-band:hover{background-color:#2a648c;
 
 }
 
