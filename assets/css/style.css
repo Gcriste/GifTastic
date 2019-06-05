@@ -1,0 +1,91 @@
+
+body{
+    width:100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+
+
+.container{
+    background-color:#f4bf42;
+}
+
+.instructions{
+    font-size:34px;
+    color:white;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    border-bottom:5px solid black;
+    background-color:grey;
+   
+}
+
+.gifdirections, .add-band-text{
+    font-size:24px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+
+}
+
+.gifsection{
+   text-align:center;
+}
+
+.bandDiv{float:left;
+    
+}
+
+.gif{
+
+ 
+   max-width:60%;
+  
+    margin:10px;
+    padding:5px;
+    border:5px solid black;
+    border-radius:5%;
+    
+}
+
+.gif:hover{
+    background-color:green;
+}
+button:hover{
+background-color:green;
+
+}
+
+#add-band:hover{background-color:green;
+
+}
+
+
+button, .gif{  -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+
+
+.newbutton{
+    border-radius:5px;
+    margin:10px;
+}
+
+#add-band{
+    width:50%;
+    margin:10px;
+    border-radius:5px;
+
+}
+
+.footer{
+    border-top:10px solid black;
+    text-align:center;
+    background-color:Grey;
+    position: sticky;  
+    bottom: 0;  
+    width: 100%;  
+  color:white;
+  height:40px;
+}

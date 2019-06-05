@@ -1,8 +1,8 @@
 $(document).ready(function() {
    
 
-var topics = ["Led Zeppelin", "The Doors", "The Who", "The Beatles", "Pink Floyd", "Stevie Wonder", "Michael Jackson", "Phish", "The Grateful Dead"]
-
+//var topics = ["Metallica", "The Doors", "The Who", "The Beatles", "Pink Floyd", "Stevie Wonder", "Michael Jackson", "Phish", "The Grateful Dead", "Nirvana", "Red Hot Chili Peppers"]
+var topics = ["sad", "angry", "happy", "confused", "excited", "awkward", "frustrated", "tired", "mind blown", "hungry", "embarassed", "scared"]
 
 function displayButton(){
 $("#buttonsection").empty();
@@ -10,7 +10,7 @@ $("#buttonsection").empty();
 
 for (var i =0; i<topics.length; i++){
     var newButton = $("<button>").text(topics[i]);
-          newButton.addClass("btn1");
+          newButton.addClass("newbutton");
           newButton.attr("data-name", topics[i]);
           $("#buttonsection").append(newButton);
 
@@ -20,16 +20,25 @@ for (var i =0; i<topics.length; i++){
 
 $("#add-band").on("click", function(event){
     event.preventDefault();
-
     var band = $("#band-input").val().trim();
     topics.push(band);
     displayButton();
+    $("#band-input").val("");
 })
+
+
 
 displayButton();
 
 
+
+
+
+$(document).on("click", ".newbutton", displayGif);
 function displayGif(){
+  $(".gifdirections").text("Now click on a picture to see the gif move!");
+
+clearImages();
 var band = $(this).attr("data-name");
 var queryURL = "https://api.giphy.com/v1/stickers/search?q=" + band + "&api_key=eq42y8d62sEJYuI4Mo0r7sjJaSey3WV8";
 
@@ -39,38 +48,38 @@ $.ajax({
     method: "GET"
   }).then(function(response) {
         console.log(response)
-    var results = response.data
+    var results = response.data;
 
-    for (var i =0; i<results.length;i++){
+    for (var i =0; i<10;i++){
        var bandDiv = $("<div>")
-        var animatedBandImage = $("<img>");
         var stillBandImage = $("<img>");
         var bandRating = $("<div>");
 
-        animatedBandImage.attr("src", results[i].images.original.url);
-        animatedBandImage.attr("data-animate", results[i].images.original.url);
-        animatedBandImage.attr("data-still", results[i].images.original_still.url);
-        animatedBandImage.attr("data-state", "animate");
-        animatedBandImage.addClass("gif");
+        stillBandImage.attr("src", results[i].images.fixed_height_still.url);
+        stillBandImage.attr("data-still", results[i].images.fixed_height_still.url);
+        stillBandImage.attr("data-animate", results[i].images.fixed_height.url);
+        stillBandImage.attr("data-state", "still");
+        stillBandImage.addClass("gif");
 
+        bandDiv.addClass("bandDiv");
 
         bandRating.text("Rating: " + results[i].rating)
 
 
-        bandDiv.prepend(animatedBandImage, bandRating)
-        $("#images").prepend(bandDiv);
+        bandDiv.append(stillBandImage, bandRating)
+        $("#images").append(bandDiv);
       
     }
   });
+}
+
 
     $(document).on("click", ".gif", function() {
-    
-        // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+     
+      
         var state = $(this).attr("data-state");
       
-        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-        // Then, set the image's data-state to animate
-        // Else set src to the data-still value
+      console.log(state)
         if (state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate");
@@ -84,25 +93,13 @@ $.ajax({
     
 
 
+
+
+
+function clearImages(){
+
+  $("#images").empty();
+
 }
-
-
-
-
-
-//for (var i = 0; i < results.length; i++) {
-    //var animalDiv= $("<div>")
-   //var p = $("<p>").text(results[i].rating)
-
-    // var animalImage = $("<img>")
-     //animalImage.attr("src", results[i].images.fixed_height.url)
-       
-    // animalDiv.append(p)
-     //animalDiv.append(animalImage)
-     //$("#gifs-appear-here").prepend(animalDiv)
-
-   //}
-
-$(document).on("click", ".btn1", displayGif);
 
 });

@@ -5,34 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <link rel="stylesheet" href = "assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-
-
     <title>Gif Tastic</title>
 </head>
+
+
+
 <body>
+
+    <header >
+        <div class = "instructions">
+            Click on a button to see the images!
+        </div>
+    </header>
 
     <div class = "container">
         <div class = "row">
-            <div class = "col-md-6">
+            <div class = "col-md-9">
                 <div id = "buttonsection"></div>
             </div>
             <div class = "col-md-3">
                 <form id = "band-form">
-                    <label for = "band-input">Add another band! </label>
+                    <label class = "add-band-text" for = "band-input">Add another emotion! </label>
                     <input type ="text" id ="band-input"><br>
-                    <div id = "add-band" type = "submit" value= "add a new band"></div>
+                    <button id = "add-band" type = "submit" value= "add a new band">Click Here!</button>
                 </form>
             </div>
-            <div id ="images"></div>
+            
+        </div>
+        <div class = "row">
+            <div class = "col-md-12" class = "col-sm-4">
+                <div class = "gifdirections"></div>
+                <div class = "gifsection">
+                    <div  id ="images"></div>
+                </div>
+            </div>
+
         </div>
     </div>
         
    
 
+<div class = "footer">
+        &copy; 2019
+</div>
 
 
     
