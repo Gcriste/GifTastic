@@ -1,4 +1,11 @@
-#instructions
+## GifTastic
+
+## Deployed link: https://gcriste.github.io/GifTastic/
+
+## Simple gif app
+
+
+### instructions
 
 * When page is loaded buttons will be displayed in the category of different emotions
 
@@ -13,3 +20,7 @@ press enter to create a new emotion button
 
 * If the user clicks on the gif again, it will go back to "still"
 
+### Technologies used: HTML, CSS, Javascript, 
+
+### Creator
+- I am the sole creator and owner. @GriffinCriste
